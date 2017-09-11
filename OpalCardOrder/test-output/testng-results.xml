@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="11412" started-at="2017-09-11T00:56:05Z" finished-at="2017-09-11T00:56:16Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="11412" started-at="2017-09-11T00:56:05Z" finished-at="2017-09-11T00:56:16Z">
+      <class name="OrderCard.LoginToOpalNew">
+        <test-method status="PASS" signature="LoadWebPage()[pri:0, instance:OrderCard.LoginToOpalNew@548a9f61]" name="LoadWebPage" is-config="true" duration-ms="7842" started-at="2017-09-11T01:56:05Z" finished-at="2017-09-11T01:56:13Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoadWebPage -->
+        <test-method status="PASS" signature="loginToOpal(java.lang.Integer, OrderCard.LoginData)[pri:0, instance:OrderCard.LoginToOpalNew@548a9f61]" name="loginToOpal" duration-ms="2575" started-at="2017-09-11T01:56:13Z" data-provider="getRowData" finished-at="2017-09-11T01:56:16Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[OrderCard.LoginData@7393222f]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginToOpal -->
+        <test-method status="PASS" signature="loginToOpalForAllUsers(java.util.HashMap)[pri:0, instance:OrderCard.LoginToOpalNew@548a9f61]" name="loginToOpalForAllUsers" duration-ms="707" started-at="2017-09-11T01:56:16Z" data-provider="getDataForAllRows" finished-at="2017-09-11T01:56:16Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{0=OrderCard.LoginData@29526c05, 1=OrderCard.LoginData@2ef14fe, 2=OrderCard.LoginData@77102b91}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginToOpalForAllUsers -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:OrderCard.LoginToOpalNew@548a9f61]" name="afterTest" is-config="true" duration-ms="0" started-at="2017-09-11T01:56:16Z" finished-at="2017-09-11T01:56:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- OrderCard.LoginToOpalNew -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
