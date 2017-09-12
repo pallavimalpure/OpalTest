@@ -1,6 +1,9 @@
 package OrderCard;
 
 import org.testng.annotations.Test;
+
+import POMObjectRepository.*;
+
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.BeforeTest;
 
@@ -21,13 +24,16 @@ public class LoginToOpal {
 	WebDriver driver;
 	String appURL = null;
 	LoginDAO loginDAO = new LoginDAO();
+	OpalPageAction pageActions;
 	
   @Test(dataProvider = "getRowData")
-  public void loginToOpal(Integer n, LoginData logData) 
+  public void testLoginToOpal(Integer n, LoginData logData) 
   {
-	  driver.findElement(By.id("h_username")).sendKeys(logData.userId);
-	  driver.findElement(By.id("h_password")).sendKeys(logData.password);
-	  driver.findElement(By.className("button")).click();
+	  	pageActions = new OpalPageAction(driver);
+	    pageActions.logintoOpal(logData);
+	  //driver.findElement(By.xpath(".//input[@id = 'h_username']")).sendKeys(logData.userId);
+	  //driver.findElement(By.id("h_password")).sendKeys(logData.password);
+	  //driver.findElement(By.className("button")).click();
 	  
 	  try 
 	  {
@@ -81,7 +87,7 @@ public class LoginToOpal {
 	  };
   }
   
-  @Test(dataProvider = "getDataForAllRows")
+  @Test(dataProvider = "getDataForAllRows",enabled = false)
   public void loginToOpalForAllUsers(HashMap<Integer, LoginData> data) 
   {
 	  for(LoginData temp : data.values())
