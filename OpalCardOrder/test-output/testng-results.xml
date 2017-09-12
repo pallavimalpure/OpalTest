@@ -2,31 +2,24 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="10045" started-at="2017-09-12T21:03:04Z" finished-at="2017-09-12T21:03:15Z">
+  <suite name="Default suite" duration-ms="16897" started-at="2017-09-12T21:34:19Z" finished-at="2017-09-12T21:34:36Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="10045" started-at="2017-09-12T21:03:04Z" finished-at="2017-09-12T21:03:15Z">
-      <class name="TestOpalApp.TestMultipleLoginToOpal">
-        <test-method status="PASS" signature="LoadWebPage()[pri:0, instance:TestOpalApp.TestMultipleLoginToOpal@735b5592]" name="LoadWebPage" is-config="true" duration-ms="8644" started-at="2017-09-12T22:03:04Z" finished-at="2017-09-12T22:03:13Z">
+    <test name="Default test" duration-ms="16897" started-at="2017-09-12T21:34:19Z" finished-at="2017-09-12T21:34:36Z">
+      <class name="TestOpalApp.TestCreateUser">
+        <test-method status="PASS" signature="LoadWebPage()[pri:0, instance:TestOpalApp.TestCreateUser@9629756]" name="LoadWebPage" is-config="true" duration-ms="7290" started-at="2017-09-12T22:34:19Z" finished-at="2017-09-12T22:34:26Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LoadWebPage -->
-        <test-method status="PASS" signature="loginToOpalForAllUsers(java.util.HashMap)[pri:0, instance:TestOpalApp.TestMultipleLoginToOpal@735b5592]" name="loginToOpalForAllUsers" duration-ms="809" started-at="2017-09-12T22:03:13Z" data-provider="getDataForAllRows" finished-at="2017-09-12T22:03:14Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{0=opalLoginPage.LoginData@babafc2, 1=opalLoginPage.LoginData@31add175, 2=opalLoginPage.LoginData@ae3540e}]]>
-              </value>
-            </param>
-          </params>
+        <test-method status="PASS" signature="isUserCreated()[pri:0, instance:TestOpalApp.TestCreateUser@9629756]" name="isUserCreated" duration-ms="9228" started-at="2017-09-12T22:34:26Z" finished-at="2017-09-12T22:34:35Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginToOpalForAllUsers -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:TestOpalApp.TestMultipleLoginToOpal@735b5592]" name="afterTest" is-config="true" duration-ms="230" started-at="2017-09-12T22:03:14Z" finished-at="2017-09-12T22:03:15Z">
+        </test-method> <!-- isUserCreated -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:TestOpalApp.TestCreateUser@9629756]" name="afterTest" is-config="true" duration-ms="326" started-at="2017-09-12T22:34:35Z" finished-at="2017-09-12T22:34:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-      </class> <!-- TestOpalApp.TestMultipleLoginToOpal -->
+      </class> <!-- TestOpalApp.TestCreateUser -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
