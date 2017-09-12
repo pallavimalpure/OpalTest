@@ -1,4 +1,4 @@
-package CreateNewUser;
+package createUserPage;
 
 import java.util.concurrent.TimeUnit;
 
@@ -8,7 +8,7 @@ import org.openqa.selenium.WebDriver;
 import KeyWords.KeyWordDrivenActions;
 import config.ConfigHelper;
 
-public class CreateUserPage extends KeyWordDrivenActions
+public class CreateUser extends KeyWordDrivenActions
 {
 	//test git
 	KeyWordDrivenActions keyAction;

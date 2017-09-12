@@ -8,8 +8,8 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import CreateNewUser.CreateUserPage;
 import config.ConfigHelper;
+import createUserPage.CreateUser;
 import junit.framework.Assert;
 
 public class TestCreateUser 
@@ -20,7 +20,7 @@ public class TestCreateUser
 	  @Test
 	  public void isUserCreated() 
 	  {
-		  CreateUserPage createUser = new CreateUserPage();
+		  CreateUser createUser = new CreateUser();
 		  try 
 		  {
 			String exp = "Please complete the security words field";
