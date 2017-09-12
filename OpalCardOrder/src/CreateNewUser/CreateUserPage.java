@@ -1,4 +1,4 @@
-package opalCreateUserPage;
+package CreateNewUser;
 
 import java.util.concurrent.TimeUnit;
 
@@ -8,7 +8,7 @@ import org.openqa.selenium.WebDriver;
 import KeyWords.KeyWordDrivenActions;
 import config.ConfigHelper;
 
-public class CreateNewUser extends KeyWordDrivenActions
+public class CreateUserPage extends KeyWordDrivenActions
 {
 	KeyWordDrivenActions keyAction;
 	String elementPath = null;

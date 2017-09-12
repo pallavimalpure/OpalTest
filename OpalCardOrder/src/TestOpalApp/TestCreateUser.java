@@ -8,9 +8,9 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import CreateNewUser.CreateUserPage;
 import config.ConfigHelper;
 import junit.framework.Assert;
-import opalCreateUserPage.CreateNewUser;
 
 public class TestCreateUser 
 {
@@ -20,7 +20,7 @@ public class TestCreateUser
 	  @Test
 	  public void isUserCreated() 
 	  {
-		  CreateNewUser createUser = new CreateNewUser();
+		  CreateUserPage createUser = new CreateUserPage();
 		  try 
 		  {
 			String exp = "Please complete the security words field";

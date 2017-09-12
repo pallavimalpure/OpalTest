@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
+//Config helper class
 public class ConfigHelper 
 {
 	private String url = null;
