@@ -1,25 +1,26 @@
-package createUserPage;
+package com.test.pageactions;
 
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import KeyWords.KeyWordDrivenActions;
-import config.ConfigHelper;
+import com.test.config.ConfigHelper;
+import com.test.keywords.KeyWordDrivenActions;
+import com.test.pageobjects.CreateUserPageObject;
 
 public class CreateUser extends KeyWordDrivenActions
 {
 	//test git
-	KeyWordDrivenActions keyAction;
 	String elementPath = null;
 	String elementValue = null;
 	
 	public String createUser(WebDriver driver) throws InterruptedException
 	{
-		  keyAction = new KeyWordDrivenActions();
-		
-		  driver.findElement(By.xpath("//span[text() = 'Order an Opal card']")).click();
+		  CreateUserPageObject pageObject = new CreateUserPageObject(driver);
+		  
+		  click(pageObject.orderOpalCard);
+		  
 		  Thread.sleep(1000);
 			
 		  driver.findElement(By.xpath("//span[text() = 'I want to order an Adult Opal card']")).click();
@@ -31,7 +32,7 @@ public class CreateUser extends KeyWordDrivenActions
 		  
 		  String titlePath = ConfigHelper.getGetconfig().getTitlePath();
 		  elementValue = "Mrs.";
-		  keyAction.selectDropDown(driver,titlePath, elementValue);
+		  selectDropDown(driver,titlePath, elementValue);
 			
 		  driver.findElement(By.xpath("//input[@id = 'firstName']")).sendKeys("TestFirstName");
 		  driver.findElement(By.xpath("//input[@id = 'lastName']")).sendKeys("TestLastname");
@@ -43,19 +44,19 @@ public class CreateUser extends KeyWordDrivenActions
 		  
 		  String countryPath = ConfigHelper.getGetconfig().getCountryPath();
 		  elementValue = "United Kingdom";
-		  keyAction.selectDropDown(driver,countryPath, elementValue);
+		  selectDropDown(driver,countryPath, elementValue);
 		  
 		  String DobDayPath = ConfigHelper.getGetconfig().getDobDayPath();
 		  elementValue = "4";
-		  keyAction.selectDropDown(driver,DobDayPath, elementValue);
+		  selectDropDown(driver,DobDayPath, elementValue);
 		  
 		  String DobMonthPath = ConfigHelper.getGetconfig().getDobMonthPath();
 		  elementValue = "7";
-		  keyAction.selectDropDown(driver,DobMonthPath, elementValue);
+		  selectDropDown(driver,DobMonthPath, elementValue);
 		  
 		  String DobYearPath = ConfigHelper.getGetconfig().getDobYearPath();
 		  elementValue = "1987";
-		  keyAction.selectDropDown(driver,DobYearPath, elementValue);
+		  selectDropDown(driver,DobYearPath, elementValue);
 		  
 		  driver.findElement(By.xpath("//input[@id = 'emailAddress']")).sendKeys("pallavimalpure@gmail.com");
 			
@@ -69,7 +70,7 @@ public class CreateUser extends KeyWordDrivenActions
 			
 		  String secQuestionPath = ConfigHelper.getGetconfig().getSecQuestionsPath();
 		  elementValue = "First school you attended";
-		  keyAction.selectDropDown(driver,secQuestionPath, elementValue);
+		  selectDropDown(driver,secQuestionPath, elementValue);
 		  
 		  driver.findElement(By.id("securityAnswer")).sendKeys("Rachana");
 			

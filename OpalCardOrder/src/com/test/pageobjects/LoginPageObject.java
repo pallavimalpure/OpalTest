@@ -1,9 +1,11 @@
-package opalLoginPage;
+package com.test.pageobjects;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import com.test.config.ConfigHelper;
 
 public class LoginPageObject 
 {
@@ -15,12 +17,15 @@ public class LoginPageObject
 		PageFactory.initElements(driver,this);
 	}
 	
-	@FindBy(xpath =".//input[@id = 'h_username']")
+	String userName = ConfigHelper.getGetconfig().getLoginUsername();
+	@FindBy(xpath =".//input[@id = 'userName']")
 	public WebElement opalUserName;
 
-	@FindBy(xpath =".//input[@id = 'h_password']")
+	String loginPassword = ConfigHelper.getGetconfig().getLoginPassword();
+	@FindBy(xpath =".//input[@id = 'loginPassword']")
 	public WebElement opalPassword;
 	
-	@FindBy(xpath =".//input[@className = 'button']")
+	String logIn = ConfigHelper.getGetconfig().getLogIn();
+	@FindBy(xpath =".//input[@value = 'logIn']")
 	public WebElement opalLoginSubmit;
 }

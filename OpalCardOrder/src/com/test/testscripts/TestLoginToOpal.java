@@ -1,4 +1,4 @@
-package TestOpalApp;
+package com.test.testscripts;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -6,18 +6,17 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import config.ConfigHelper;
-import opalLoginPage.LoginDAO;
-import opalLoginPage.LoginData;
-import opalLoginPage.LoginPageAction;
+import com.test.config.ConfigHelper;
+import com.test.getdata.*;
+import com.test.keywords.KeyWordDrivenActions;
+import com.test.pageactions.LoginPageAction;
+import com.test.pageobjects.LoginPageObject;
 
 public class TestLoginToOpal 
 {
@@ -25,6 +24,8 @@ public class TestLoginToOpal
 	String appURL = null;
 	LoginDAO loginDAO = new LoginDAO();
 	LoginPageAction pageActions;
+	LoginPageObject pageObject;
+	KeyWordDrivenActions actions = new KeyWordDrivenActions();
 	
   @Test(dataProvider = "getRowData")
   public void testLoginToOpal(Integer n, LoginData logData) 
@@ -61,8 +62,8 @@ public class TestLoginToOpal
 			}
 	  }
 	  
-	  driver.findElement(By.id("h_username")).clear();
-	  driver.findElement(By.id("h_password")).clear();
+	  actions.clear(pageObject.opalUserName);
+	  actions.clear(pageObject.opalPassword);
   }
 
   @DataProvider
@@ -84,11 +85,10 @@ public class TestLoginToOpal
 	  };	
   }
   
-  @BeforeTest
+  @BeforeClass
   public void LoadWebPage() throws IOException 
   {	  
-	  System.setProperty("webdriver.chrome.driver","C:\\Users\\yewal\\Desktop\\Selenium Java\\chromedriver_win32\\chromedriver.exe");
-	  driver = new ChromeDriver();
+	  driver = actions.openBrowser(driver);
 	  
 	  appURL = ConfigHelper.getGetconfig().getUrl();
 	  
@@ -96,7 +96,7 @@ public class TestLoginToOpal
 	  driver.manage().window().maximize();
   }
 
-  @AfterTest
+  @AfterClass
   public void afterTest() 
   {
 	  driver.close();

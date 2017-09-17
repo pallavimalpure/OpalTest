@@ -1,16 +1,17 @@
-package TestOpalApp;
+package com.test.testscripts;
 
 import java.io.IOException;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import config.ConfigHelper;
-import createUserPage.CreateUser;
-import junit.framework.Assert;
+import com.test.config.ConfigHelper;
+import com.test.keywords.KeyWordDrivenActions;
+import com.test.pageactions.CreateUser;
 
 public class TestCreateUser 
 {
@@ -33,11 +34,12 @@ public class TestCreateUser
 		  }
 	  }
 	  
-	 @BeforeTest
+	 @BeforeClass
 	  public void LoadWebPage() throws IOException 
 	  {	  
-		  System.setProperty("webdriver.chrome.driver","C:\\Users\\yewal\\Desktop\\Selenium Java\\chromedriver_win32\\chromedriver.exe");
-		  driver = new ChromeDriver();
+		  KeyWordDrivenActions actions = new KeyWordDrivenActions();
+		  
+		  driver = actions.openBrowser(driver);
 		  
 		  appURL = ConfigHelper.getGetconfig().getUrl();
 		  
@@ -45,7 +47,7 @@ public class TestCreateUser
 		  driver.manage().window().maximize();
 	  }
 
-	  @AfterTest
+	  @AfterClass
 	  public void afterTest() 
 	  {
 		  driver.close();

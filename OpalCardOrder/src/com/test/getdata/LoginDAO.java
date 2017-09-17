@@ -1,4 +1,4 @@
-package opalLoginPage;
+package com.test.getdata;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -10,7 +10,7 @@ import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 
-import config.ConfigHelper;
+import com.test.config.ConfigHelper;
 
 //Login Data Access
 public class LoginDAO 
@@ -81,9 +81,15 @@ public class LoginDAO
 		  
 		  rcount = sh.getPhysicalNumberOfRows();
 		  ccount = sh.getRow(1).getPhysicalNumberOfCells();
-			
-		  //HashMap<Integer, LoginDataNew> map = new HashMap<Integer, LoginDataNew>(); 
-			
+		
+		  /*String configRCount = ConfigHelper.getGetconfig().getConfigRcount();
+		  
+		  int rowCount = Integer.parseInt(configRCount);
+		  
+		  if(rowCount > rcount)
+		  {
+			  return null;
+		  }*/
 		  for(row = 0;row<rcount-1;row++)
 		  {
 			LoginData data = new LoginData();
@@ -113,8 +119,8 @@ public class LoginDAO
 		  
 		return UserLoginDataMap;
 	  }
-	  
-	  public LoginData getLoginDetailsForId(int id) throws IOException
+
+	public LoginData getLoginDetailsForId(int id) throws IOException
 	  {
 		  try 
 		  {

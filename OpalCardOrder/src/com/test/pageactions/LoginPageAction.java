@@ -1,6 +1,9 @@
-package opalLoginPage;
+package com.test.pageactions;
 
 import org.openqa.selenium.WebDriver;
+
+import com.test.getdata.LoginData;
+import com.test.pageobjects.LoginPageObject;
 
 public class LoginPageAction 
 {

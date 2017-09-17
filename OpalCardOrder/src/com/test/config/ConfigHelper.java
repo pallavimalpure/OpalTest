@@ -1,4 +1,4 @@
-package config;
+package com.test.config;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -15,8 +15,15 @@ public class ConfigHelper
 	private String dobDayPath = null;
 	private String dobMonthPath = null;
 	private String dobYearPath = null;
-	private String secQuestionPath = null;			
-	
+	private String secQuestionPath = null;		
+	private String browserExe = null;
+	private String browserDriver = null;
+	private String loginUsername = null;
+	private String loginPassword = null;		
+	private String logIn = null;
+	private String orderAnOpalCard = null;
+	private String configRcount = null;
+			
 	InputStream input = null;
 	
 	static ConfigHelper getconfig = new ConfigHelper();
@@ -65,6 +72,41 @@ public class ConfigHelper
 		return secQuestionPath;
 	}
 
+	public String getBrowserExe()
+	{
+		return browserExe;
+	}
+	
+	public String getBrowserDriver() 
+	{
+		return browserDriver;
+	}
+
+	public String getLoginUsername() 
+	{
+		return loginUsername;
+	}
+
+	public String getLoginPassword() 
+	{
+		return loginPassword;
+	}
+
+	public String getLogIn() 
+	{
+		return logIn;
+	}
+	
+	public String getOrderAnOpalCard() {
+
+		return orderAnOpalCard;
+	}
+	
+	public String getConfigRcount() 
+	{
+		return configRcount;
+	}
+
 	private ConfigHelper()
 	{
 		ReadProperties();
@@ -90,6 +132,13 @@ public class ConfigHelper
 		dobMonthPath = prop.getProperty("dobMonthPath");
 		dobYearPath = prop.getProperty("dobYearPath");
 		secQuestionPath = prop.getProperty("secQuestionPath");
+		browserExe = prop.getProperty("browserExe");
+		browserDriver = prop.getProperty("browserDriver");
+		logIn = prop.getProperty("logIn");
+		loginUsername = prop.getProperty("logUsername");
+		loginPassword = prop.getProperty("loginPassword");
+		orderAnOpalCard = prop.getProperty("orderAnOpalCard");
+		configRcount = prop.getProperty("configRcount");
 	}
 	
 }

@@ -1,9 +1,11 @@
-package TestOpalApp;
+package com.test.testscripts;
 
 import org.testng.annotations.Test;
 
-import config.ConfigHelper;
-import opalLoginPage.*;
+import com.test.config.ConfigHelper;
+import com.test.getdata.*;
+import com.test.keywords.KeyWordDrivenActions;
+import com.test.pageactions.LoginPageAction;
 
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
@@ -12,7 +14,6 @@ import java.io.IOException;
 import java.util.HashMap;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 
 public class TestMultipleLoginToOpal 
@@ -56,8 +57,9 @@ public class TestMultipleLoginToOpal
   @BeforeTest
   public void LoadWebPage() throws IOException 
   {	  
-	  System.setProperty("webdriver.chrome.driver","C:\\Users\\yewal\\Desktop\\Selenium Java\\chromedriver_win32\\chromedriver.exe");
-	  driver = new ChromeDriver();
+	  KeyWordDrivenActions actions = new KeyWordDrivenActions();
+	  
+	  driver = actions.openBrowser(driver);
 	  
 	  appURL = ConfigHelper.getGetconfig().getUrl();
 	  

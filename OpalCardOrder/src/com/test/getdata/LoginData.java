@@ -1,4 +1,4 @@
-package opalLoginPage;
+package com.test.getdata;
 
 public class LoginData {
 
